@@ -9,12 +9,18 @@
         Height="450"
         Width="800">
     <Grid>
-        <Border Background="Transparent"
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Background="Transparent"
                 Height="0"
                 Opacity="0.5"
                 VerticalAlignment="Top"
                 x:Name="DragAreaBorder" />
-        <StackPanel VerticalAlignment="Center">
+        <StackPanel Grid.Row="0" VerticalAlignment="Center">
+            <Button Content="open winui window" Click="Button_Click"/>
+            <Button Content="attach winui window" Click="Button_Click2"/>
             <TextBlock Text="Reposition and size window" />
             <Grid Height="50"
                   Width="100">
@@ -126,5 +132,6 @@
             <Button Content="Set drag area"
                     Click="SetDragAreaClick" />
         </StackPanel>
+        <WindowsFormsHost Name="m_windowsFormsHost" Grid.Row="1" />
     </Grid>
 </Window>

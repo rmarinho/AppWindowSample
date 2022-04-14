@@ -18,6 +18,14 @@ public static class AppWindowExtensions
 
         return GetAppWindowFromWindowHandle(windowHandle);
     }
+
+    public static IntPtr GetAppWindowHandleForWinUI(this Microsoft.UI.Xaml.Window window)
+    {
+        var windowHandle = WinRT.Interop.WindowNative.GetWindowHandle(window);
+
+        return windowHandle;
+    }
+
     public static AppWindow GetAppWindowForWPF(this Window window)
     {
         var hwnd = new WindowInteropHelper(window).EnsureHandle();

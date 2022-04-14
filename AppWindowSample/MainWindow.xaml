@@ -12,6 +12,7 @@
                 VerticalAlignment="Top"
                 x:Name="DragAreaBorder" />
         <StackPanel VerticalAlignment="Center">
+            <TextBlock Text="{Binding Name}"/>
             <TextBlock Text="Reposition and size window" />
             <Grid Height="50"
                   Width="100">
